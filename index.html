@@ -1,25 +1,721 @@
-<!DOCTYPE html>
-<html lang="en">
 
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
-    <title>aryan7384's first github webpage</title>
-    <style>
-        #background-play {
-            display: none;
-        }
-    </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ماشین زمان زمین‌شناسی | تاریخ زمین</title>
+
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Vazirmatn:wght@300;400;500;600;700;800&display=swap');
+
+:root {
+    --dark: #25372f;
+    --green: #526b54;
+    --cream: #f5f1e7;
+    --paper: #fffdf7;
+    --brown: #a47751;
+    --muted: #827e70;
+    --line: #e5dfd1;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Vazirmatn', sans-serif;
+    background: var(--cream);
+    color: var(--dark);
+    line-height: 1.9;
+}
+
+/* NAVBAR */
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 9%;
+    background: var(--paper);
+}
+
+.logo {
+    font-size: 21px;
+    font-weight: 800;
+    letter-spacing: -1px;
+}
+
+nav a {
+    color: var(--dark);
+    text-decoration: none;
+    margin-right: 24px;
+    font-size: 14px;
+}
+
+/* HERO */
+
+.hero {
+    min-height: 560px;
+    display: flex;
+    align-items: center;
+    padding: 80px 10%;
+    background:
+    linear-gradient(90deg, rgba(23,42,32,.85), rgba(23,42,32,.25)),
+    url('https://images.unsplash.com/photo-1518837695005-2083093ee35b?auto=format&fit=crop&w=1800&q=85')
+    center/cover;
+    color: white;
+}
+
+.hero-content {
+    max-width: 620px;
+}
+
+.eyebrow {
+    color: #d7c39e;
+    font-size: 13px;
+    letter-spacing: 2px;
+}
+
+.hero h1 {
+    font-size: clamp(38px, 6vw, 68px);
+    line-height: 1.4;
+    margin: 20px 0;
+}
+
+.hero p {
+    color: #e3e2d7;
+    max-width: 480px;
+    font-weight: 300;
+}
+
+.btn {
+    display: inline-block;
+    background: #d4b88c;
+    color: #26362c;
+    padding: 12px 28px;
+    border-radius: 4px;
+    text-decoration: none;
+    margin-top: 30px;
+    font-weight: 600;
+}
+
+/* GENERAL */
+
+section {
+    padding: 90px 10%;
+}
+
+.section-title {
+    margin-bottom: 15px;
+    font-size: 32px;
+}
+
+.section-subtitle {
+    color: var(--muted);
+    margin-bottom: 40px;
+    max-width: 650px;
+}
+
+.small-label {
+    color: var(--brown);
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 2px;
+}
+
+/* INTRO */
+
+.intro {
+    background: var(--paper);
+}
+
+.intro-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 60px;
+    align-items: center;
+}
+
+.intro img {
+    width: 100%;
+    border-radius: 8px;
+    height: 350px;
+    object-fit: cover;
+}
+
+.intro p {
+    color: #68695e;
+    margin-top: 18px;
+}
+
+/* STRATA */
+
+.strata {
+    background: #e9e1d1;
+}
+
+.strata-visual {
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    border-radius: 8px;
+    box-shadow: 0 15px 40px #40332320;
+}
+
+.layer {
+    min-height: 95px;
+    padding: 20px 30px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: white;
+}
+
+.layer small {
+    opacity: .8;
+}
+
+.layer:nth-child(1) { background: #9aaf87; }
+.layer:nth-child(2) { background: #bd9369; }
+.layer:nth-child(3) { background: #765b49; }
+.layer:nth-child(4) { background: #c2a17e; }
+.layer:nth-child(5) { background: #555e51; }
+
+.layer-info {
+    background: var(--paper);
+    padding: 30px;
+    border-radius: 8px;
+    margin-top: 25px;
+    color: #67675d;
+}
+
+/* FOSSILS */
+
+.fossils {
+    background: var(--paper);
+}
+
+.card-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+}
+
+.card {
+    background: #f6f2e9;
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.card img {
+    width: 100%;
+    height: 210px;
+    object-fit: cover;
+}
+
+.card-content {
+    padding: 22px;
+}
+
+.card h3 {
+    margin-bottom: 10px;
+}
+
+.card p {
+    font-size: 14px;
+    color: var(--muted);
+}
+
+/* RADIOACTIVE DATING */
+
+.dating {
+    background: var(--dark);
+    color: white;
+}
+
+.dating .section-subtitle {
+    color: #b9c1b7;
+}
+
+.dating-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 50px;
+    align-items: center;
+}
+
+.dating-box {
+    background: #34493b;
+    padding: 30px;
+    border-radius: 8px;
+}
+
+.atom-row {
+    display: flex;
+    justify-content: space-around;
+    margin: 30px 0;
+    gap: 10px;
+}
+
+.atom {
+    width: 75px;
+    height: 75px;
+    border-radius: 50%;
+    display: grid;
+    place-items: center;
+    background: #bd9369;
+    color: #26362c;
+    font-weight: 800;
+    font-size: 22px;
+}
+
+.atom.daughter {
+    background: #8caa86;
+}
+
+.dating-box p {
+    color: #cbd2c8;
+    font-size: 14px;
+}
+
+.steps {
+    margin-top: 25px;
+}
+
+.steps li {
+    margin: 14px 0;
+    color: #d0d6ce;
+}
+
+.dating-text p {
+    color: #c4cdc3;
+    margin-top: 20px;
+}
+
+/* TIMELINE */
+
+.timeline {
+    background: var(--cream);
+}
+
+.timeline-item {
+    display: grid;
+    grid-template-columns: 150px 1fr;
+    gap: 30px;
+    padding: 25px 0;
+    border-bottom: 1px solid var(--line);
+}
+
+.timeline-item strong {
+    color: var(--brown);
+    font-size: 20px;
+}
+
+/* FOOTER */
+
+footer {
+    background: #1b2b23;
+    color: white;
+    text-align: center;
+    padding: 45px 20px;
+}
+
+footer p {
+    color: #b4beb3;
+    font-size: 13px;
+}
+
+/* RESPONSIVE */
+
+@media (max-width: 768px) {
+    nav {
+        padding: 18px 5%;
+    }
+
+    nav div:last-child {
+        display: none;
+    }
+
+    section {
+        padding: 65px 6%;
+    }
+
+    .hero {
+        min-height: 500px;
+        padding: 60px 7%;
+    }
+
+    .intro-grid,
+    .dating-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .card-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .timeline-item {
+        grid-template-columns: 1fr;
+        gap: 5px;
+    }
+}
+</style>
 </head>
 
 <body>
-    <audio src="files/chopin ocean etude.mp3" autoplay="autoplay" id="background-play"></audio>
-    <div class="container-fluid">
-        <h2>easy<span class="badge bg-primary">asf</span></h2>
-        <p class="text-primary">playing... Chopin Etude op. 25 no. 12 in C Minor (Ocean)</p>
-    </div>
-</body>
 
+<!-- NAVBAR -->
+
+<nav>
+    <div class="logo">GEOLOGIA.</div>
+    <div>
+        <a href="#intro">تاریخ زمین</a>
+        <a href="#strata">لایه‌ها</a>
+        <a href="#fossils">فسیل‌ها</a>
+        <a href="#dating">سن‌سنجی</a>
+    </div>
+</nav>
+
+<!-- HERO -->
+
+<header class="hero">
+    <div class="hero-content">
+        <span class="eyebrow">A JOURNEY THROUGH TIME</span>
+
+        <h1>
+            زمین، کتابی<br>
+            با میلیاردها سال داستان
+        </h1>
+
+        <p>
+            هر سنگ، هر فسیل و هر لایه از زمین،
+            بخشی از داستان گذشته سیاره ما را در خود نگه داشته است.
+            بیایید این داستان را بخوانیم.
+        </p>
+
+        <a href="#intro" class="btn">شروع سفر</a>
+    </div>
+</header>
+
+<!-- INTRO -->
+
+<section class="intro" id="intro">
+    <div class="intro-grid">
+
+        <div>
+            <span class="small-label">01 — INTRODUCTION</span>
+
+            <h2 class="section-title">
+                زمین چگونه گذشته خود را حفظ می‌کند؟
+            </h2>
+
+            <p>
+                زمین حدود ۴.۶ میلیارد سال پیش شکل گرفت.
+                در طول این مدت، تغییرات فراوانی در سطح آن
+                اتفاق افتاده است.
+            </p>
+
+            <p>
+                سنگ‌های رسوبی و فسیل‌های موجود در آن‌ها
+                مانند صفحات یک کتاب تاریخی هستند.
+                دانشمندان با بررسی آن‌ها می‌توانند
+                محیط زندگی جانداران گذشته و تغییرات زمین را
+                کشف کنند.
+            </p>
+        </div>
+
+        <img
+        src="https://images.unsplash.com/photo-1518837695005-2083093ee35b?auto=format&fit=crop&w=900&q=85"
+        alt="منظره طبیعی زمین">
+    </div>
+</section>
+
+<!-- STRATA -->
+
+<section class="strata" id="strata">
+
+    <span class="small-label">02 — SEDIMENTARY ROCKS</span>
+
+    <h2 class="section-title">داستان لایه‌های زمین</h2>
+
+    <p class="section-subtitle">
+        رسوبات در طول زمان روی یکدیگر جمع می‌شوند
+        و به‌تدریج سنگ‌های رسوبی را تشکیل می‌دهند.
+    </p>
+
+    <div class="strata-visual">
+
+        <div class="layer">
+            <strong>لایه اول — جدیدتر</strong>
+            <small>رسوبات سطحی</small>
+        </div>
+
+        <div class="layer">
+            <strong>لایه دوم</strong>
+            <small>بقایای جانداران</small>
+        </div>
+
+        <div class="layer">
+            <strong>لایه سوم</strong>
+            <small>سنگ‌های رسوبی</small>
+        </div>
+
+        <div class="layer">
+            <strong>لایه چهارم</strong>
+            <small>رسوبات قدیمی‌تر</small>
+        </div>
+
+        <div class="layer">
+            <strong>لایه پنجم — قدیمی‌تر</strong>
+            <small>سنگ‌های زیرین</small>
+        </div>
+
+    </div>
+
+    <div class="layer-info">
+        <strong>اصل روی‌هم‌گذاری لایه‌ها</strong>
+        <p>
+            در یک توالی رسوبی دست‌نخورده،
+            لایه‌های پایینی قدیمی‌تر از لایه‌های بالایی هستند.
+            البته ممکن است چین‌خوردگی، گسل یا فرسایش
+            این ترتیب را تغییر داده باشد.
+        </p>
+    </div>
+
+</section>
+
+<!-- FOSSILS -->
+
+<section class="fossils" id="fossils">
+
+    <span class="small-label">03 — FOSSILS</span>
+
+    <h2 class="section-title">پنجره‌ای به دنیای گذشته</h2>
+
+    <p class="section-subtitle">
+        فسیل‌ها بقایا یا آثار جاندارانی هستند
+        که در گذشته روی زمین زندگی می‌کرده‌اند.
+    </p>
+
+    <div class="card-grid">
+
+        <article class="card">
+            <img
+            src="https://images.unsplash.com/photo-1564760055775-d63b17a55c44?auto=format&fit=crop&w=700&q=85"
+            alt="فسیل">
+            <div class="card-content">
+                <h3>فسیل‌های بدنی</h3>
+                <p>
+                    بخش‌هایی از بدن جانداران مانند
+                    استخوان، دندان و صدف که حفظ شده‌اند.
+                </p>
+            </div>
+        </article>
+
+        <article class="card">
+            <img
+            src="https://images.unsplash.com/photo-1615485290382-441e4d049cb5?auto=format&fit=crop&w=700&q=85"
+            alt="سنگ و فسیل">
+            <div class="card-content">
+                <h3>آثار فسیلی</h3>
+                <p>
+                    ردپا، مسیر حرکت و آثار فعالیت
+                    جانداران گذشته.
+                </p>
+            </div>
+        </article>
+
+        <article class="card">
+            <img
+            src="https://images.unsplash.com/photo-1535338454770-8be927b5a00b?auto=format&fit=crop&w=700&q=85"
+            alt="سنگ‌های طبیعی">
+            <div class="card-content">
+                <h3>فسیل‌های شاخص</h3>
+                <p>
+                    فسیل جاندارانی که مدت زندگی کوتاه
+                    و پراکندگی جغرافیایی گسترده‌ای داشته‌اند.
+                </p>
+            </div>
+        </article>
+
+    </div>
+</section>
+
+<!-- RADIOACTIVE DATING -->
+
+<section class="dating" id="dating">
+
+    <span class="small-label">04 — RADIOACTIVE DATING</span>
+
+    <h2 class="section-title">سفر در زمان با اتم‌ها</h2>
+
+    <p class="section-subtitle">
+        چگونه دانشمندان سن سنگ‌ها و مواد زمین‌شناسی را
+        با استفاده از عناصر رادیواکتیو تخمین می‌زنند؟
+    </p>
+
+    <div class="dating-grid">
+
+        <div class="dating-box">
+
+            <h3>تجزیه رادیواکتیو</h3>
+
+            <div class="atom-row">
+
+                <div>
+                    <div class="atom">P</div>
+                    <p>عنصر مادر</p>
+                </div>
+
+                <div style="align-self:center;font-size:25px">
+                    →
+                </div>
+
+                <div>
+                    <div class="atom daughter">D</div>
+                    <p>عنصر دختر</p>
+                </div>
+
+            </div>
+
+            <p>
+                با گذشت زمان، عنصر مادر به عنصر دختر تبدیل می‌شود.
+                سرعت این فرایند برای هر ایزوتوپ مشخص است.
+            </p>
+
+            <hr style="border-color:#607366;margin:25px 0">
+
+            <h3>نیمه‌عمر چیست؟</h3>
+
+            <p>
+                زمانی که لازم است تا نیمی از اتم‌های
+                رادیواکتیو یک نمونه تجزیه شوند.
+            </p>
+
+            <div style="margin-top:25px">
+                <p>ابتدا: ۱۰۰٪</p>
+                <p>یک نیمه‌عمر: ۵۰٪</p>
+                <p>دو نیمه‌عمر: ۲۵٪</p>
+                <p>سه نیمه‌عمر: ۱۲.۵٪</p>
+            </div>
+
+        </div>
+
+        <div class="dating-text">
+
+            <h3>اما سن یک لایه رسوبی چطور مشخص می‌شود؟</h3>
+
+            <p>
+                معمولاً خود دانه‌های رسوبی را مستقیماً
+                تاریخ‌گذاری نمی‌کنند؛ چون ممکن است
+                بسیار قدیمی‌تر از زمان رسوب‌گذاری باشند.
+            </p>
+
+            <ol class="steps">
+                <li>
+                    پیدا کردن لایه‌های خاکستر آتشفشانی
+                    در اطراف لایه رسوبی
+                </li>
+
+                <li>
+                    بررسی کانی‌های مناسب برای سن‌سنجی
+                    در خاکستر آتشفشانی
+                </li>
+
+                <li>
+                    اندازه‌گیری نسبت ایزوتوپ‌های مادر و دختر
+                </li>
+
+                <li>
+                    تخمین سن لایه‌های رسوبی با استفاده از
+                    سن لایه‌های بالایی و پایینی
+                </li>
+            </ol>
+
+            <p>
+                ترکیب این روش با بررسی فسیل‌ها و ترتیب
+                لایه‌ها به دانشمندان کمک می‌کند
+                تاریخ زمین را بازسازی کنند.
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- TIMELINE -->
+
+<section class="timeline">
+
+    <span class="small-label">05 — EARTH HISTORY</span>
+
+    <h2 class="section-title">نگاهی به تاریخ زمین</h2>
+
+    <p class="section-subtitle">
+        چند نقطه مهم از تاریخ طولانی سیاره ما
+    </p>
+
+    <div class="timeline-item">
+        <strong>۴.۶ میلیارد سال پیش</strong>
+        <div>
+            <h3>شکل‌گیری زمین</h3>
+            <p>سیاره زمین از مواد موجود در منظومه شمسی اولیه شکل گرفت.</p>
+        </div>
+    </div>
+
+    <div class="timeline-item">
+        <strong>۵۴۱ میلیون سال پیش</strong>
+        <div>
+            <h3>آغاز کامبرین</h3>
+            <p>تنوع جانداران در دریاها به‌سرعت افزایش یافت.</p>
+        </div>
+    </div>
+
+    <div class="timeline-item">
+        <strong>حدود ۲۳۰ میلیون سال پیش</strong>
+        <div>
+            <h3>ظهور دایناسورها</h3>
+            <p>نخستین دایناسورها در دوره تریاس پدیدار شدند.</p>
+        </div>
+    </div>
+
+    <div class="timeline-item">
+        <strong>۶۶ میلیون سال پیش</strong>
+        <div>
+            <h3>انقراض بزرگ</h3>
+            <p>بسیاری از گونه‌ها، از جمله دایناسورهای غیرپرنده، منقرض شدند.</p>
+        </div>
+    </div>
+
+    <div class="timeline-item">
+        <strong>امروز</strong>
+        <div>
+            <h3>زمین همچنان در حال تغییر است</h3>
+            <p>فرایندهای زمین‌شناسی هنوز هم ادامه دارند.</p>
+        </div>
+    </div>
+
+</section>
+
+<!-- FOOTER -->
+
+<footer>
+    <h2>GEOLOGIA.</h2>
+    <p>
+        هر سنگ، داستانی دارد که منتظر کشف شدن است.
+    </p>
+    <p style="margin-top:20px">
+        پروژه آموزشی علوم نهم | فصل هفتم
+    </p>
+</footer>
+
+</body>
 </html>
